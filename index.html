@@ -1,0 +1,37 @@
+<html>
+    <head>
+
+    </head>
+    <body style=" background-color: white; ">
+        <div style="width: 600px; margin: 50px; padding: 40px; border: black solid 1px; border-radius: 10px; margin: 40px auto;">
+            <div style="font-size: 32px; font-weight: bold;">GetDestiny(entropy, branches)</div>
+            <div style="padding-top: 40px; font-size: 20px;">
+                <form action="">
+                    Branches - 選択肢を行区切りで入力する:<br />
+                    <textarea name="b" id="branches" style="height: 240px; width: 400px; resize: vertical; margin-top: 10px; font-size: 20px; padding: 10px;"></textarea>
+                    <div style="font-size: 16px;">
+                        checksum: <span id="checksum" style="padding-left: 5px;"></span>
+                    </div>
+                    <br />
+
+                    Entropy - 乱数の素:<br />
+                    <input name="e" type="text" id="entropy" style="height: 40px; width: 400px; margin-top: 10px; font-size: 20px; padding: 10px;"><br /><br />
+
+                    <input type="submit" style="height: 60px; width: 160px; font-size: 24px; margin: 10px 0;" value="Execute">
+                </form>
+            </div>
+    
+            <div style="margin-top: 40px; background-color: black; color: white; padding: 16px; border-radius: 10px; font-size: 40px; text-align: center;" id="resultBlock" hidden="true">
+                <div>
+                    <span id="result"></span>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px; text-align: right;">
+                <a href="">initialize</a>
+            </div>
+            
+        </div>
+        <script src="./dist/main.js"></script>
+    </body>
+</html>
