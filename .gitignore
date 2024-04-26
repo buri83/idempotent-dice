@@ -1,3 +1,4 @@
 /dist/**/*
 !/dist/**/main.js
+!/dist/**/image.png
 node_modules/

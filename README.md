@@ -5,7 +5,7 @@
 
 https://get-destiny.burion.net/
 
-# How to use
+# 使い方
 
 ## Entropy
 
