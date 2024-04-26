@@ -57,7 +57,7 @@ function main(): void {
         query = "?e=123&b=a%0D%0Ab%0D%0Ac"
     }
     const searchParams = new URLSearchParams(query);
-    const entropy = searchParams.get("e").trim();
+    const entropy = searchParams.get("e")?.trim();
     const branches = searchParams.get("b")?.replaceAll("\r", "").trim().split("\n") || [];
 
     const entropyElement = document.getElementById("entropy");
