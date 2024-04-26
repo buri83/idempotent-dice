@@ -5,7 +5,7 @@ export class HashDice {
         const rand = this.toRandomNumber(entropy);
         return this.choiceOne(branches, rand);
     }
-    public fingerPrint(text: string): string {
+    public checksum(text: string): string {
         const rand = this.toRandomNumber(text);
         const fingerPrint = Math.floor(999 * rand)
             .toString()
@@ -64,16 +64,23 @@ function main(): void {
     const branchesElement = document.getElementById("branches");
     (entropyElement as any).value = entropy;
     (branchesElement as any).value = branches.join("\n");
-
-    if (!entropy || branches.length === 0 || branches[0] === "") {
-        console.log("No entropy or branches");
+    if (branches.length === 0 || branches[0] === "") {
+        console.log("No branches");
         return;
     }
 
     const hashDice = new HashDice();
-    const branchChecksum = hashDice.fingerPrint(branches.join(","));
-    const destiny = hashDice.getDestiny(entropy, branches);
+    const branchChecksum = hashDice.checksum(branches.join(","));
+    if(!entropy){
+        console.log("No entropy");
+        if(typeof window !== "undefined"){
+            const branchChecksumElement = document.getElementById("checksum");
+            branchChecksumElement.textContent = branchChecksum;
+        }
+        return;
+    }
 
+    const destiny = hashDice.getDestiny(entropy, branches);
     if(typeof window !== "undefined"){
         const resultElement = document.getElementById("result");
         const branchChecksumElement = document.getElementById("checksum");
