@@ -78,7 +78,7 @@ function main(): void {
         const resultElement = document.getElementById("result");
         const branchChecksumElement = document.getElementById("checksum");
         const resultBlockElement = document.getElementById("resultBlock");
-        const fingerPrintBlockElement = document.getElementById("fingerPrintBlock");
+        const fingerPrintBlockElement = document.getElementById("checksum");
 
         resultElement.textContent = destiny;
         branchChecksumElement.textContent = branchChecksum;
