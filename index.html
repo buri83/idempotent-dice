@@ -32,22 +32,29 @@
                     <br />
 
                     Entropy - 乱数の素:<br />
-                    <input name="e" type="text" id="entropy" style="height: 40px; width: 800px; margin-top: 10px; font-size: 16px; padding: 10px;"><br /><br />
+                    <input name="e" type="text" id="entropy" style="height: 40px; width: 800px; margin-top: 10px; font-size: 16px; padding: 10px;"><br />
 
-                    <input type="submit" style="height: 60px; width: 160px; font-size: 24px; margin: 10px 0;" value="Execute">
+                    <input type="submit" style="height: 60px; width: 160px; font-size: 24px; margin: 40px 0;" value="Execute">
                 </form>
             </div>
-    
-            <div style="margin-top: 40px; background-color: black; color: white; padding: 16px; border-radius: 10px; font-size: 40px; text-align: center;" id="resultBlock" hidden="true">
+
+            <div style="margin-top: 4px; background-color: black; color: white; padding: 16px; border-radius: 10px; font-size: 40px; text-align: center;" id="resultBlock" hidden="true">
                 <div>
                     <span id="result"></span>
                 </div>
             </div>
 
+                        
+            <div style="margin-top: 10px; text-align: center;">
+                <a onclick="navigator.clipboard.writeText(window.location.href); this.textContent = 'Copied ✓'; return false;" href="#">Copy URL</a>
+            </div>
+            
+
             <div style="margin-top: 30px; text-align: right;">
                 <a onclick="initialize(); return false;" href="#">initialize</a>
             </div>
         </div>
+        <center>ハッシュ関数を利用した再現性のあるサイコロです。URL を渡すことで決まった内容を共有できます。</center>
         <center><a href="https://github.com/buri83/get-destiny">README</a></center>
         <script src="./dist/main.js"></script>
 
