@@ -1,9 +1,11 @@
-# GetDestiny(entropy, branches)
+# GetDestiny
 
 神がサイコロを振るのか振らないのかは知らないですが、Hash 関数でできたサイコロには再現性があります。
 つまり、何かのイベントが起きた時刻や紐付いた URL を利用すると再現可能で完全な乱数を利用できます。
 
 https://get-destiny.burion.net/
+
+<img src="https://github.com/buri83/get-destiny/blob/main/dist/image.png" height="540px">
 
 # 使い方
 
