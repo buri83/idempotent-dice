@@ -45,12 +45,16 @@
             </div>
 
             <div style="margin-top: 30px; text-align: right;">
-                <a onclick="() => {
-                    window.location.href = '/';
-                }">initialize</a>
+                <a onclick="initialize(); return false;" href="#">initialize</a>
             </div>
         </div>
         <center><a href="https://github.com/buri83/get-destiny">README</a></center>
         <script src="./dist/main.js"></script>
+
+        <script>
+            function initialize() {
+                window.location.href = '/';
+            }
+        </script>
     </body>
 </html>
