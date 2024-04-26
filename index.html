@@ -39,17 +39,14 @@
                 </form>
             </div>
 
-            <div style="margin-top: 4px; background-color: black; color: white; padding: 16px; border-radius: 10px; font-size: 40px; text-align: center;" id="resultBlock" hidden="true">
-                <div>
+            <div id="resultBlock" hidden="true">
+                <div style="margin-top: 4px; background-color: black; color: white; padding: 16px; border-radius: 10px; font-size: 40px; text-align: center;">
                     <span id="result"></span>
                 </div>
+                <div style="margin-top: 10px; text-align: center;">
+                    <a onclick="navigator.clipboard.writeText(window.location.href); this.textContent = 'Copied ✓'; return false;" href="#">Copy URL</a>
+                </div>
             </div>
-
-                        
-            <div style="margin-top: 10px; text-align: center;">
-                <a onclick="navigator.clipboard.writeText(window.location.href); this.textContent = 'Copied ✓'; return false;" href="#">Copy URL</a>
-            </div>
-            
 
             <div style="margin-top: 30px; text-align: right;">
                 <a onclick="initialize(); return false;" href="#">initialize</a>
