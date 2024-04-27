@@ -2,7 +2,7 @@ import * as cryptoJs from "crypto-js";
 
 export class HashDice {
     public getDestiny(entropy: string, branches: string[]): string {
-        const rand = this.toRandomNumber(entropy);
+        const rand = this.toRandomNumber(`${entropy}:${branches.join(":")}`);
         return this.choiceOne(branches, rand);
     }
     public checksum(text: string): string {
