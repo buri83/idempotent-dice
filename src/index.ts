@@ -7,9 +7,9 @@ export class HashDice {
     }
     public checksum(text: string): string {
         const rand = this.toRandomNumber(text);
-        const fingerPrint = Math.floor(999 * rand)
+        const fingerPrint = Math.floor(9999 * rand)
             .toString()
-            .padStart(3, "0");
+            .padStart(4, "0");
         return `${fingerPrint}`;
     }
     private toRandomNumber(text: string): number {
