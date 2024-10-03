@@ -63,10 +63,12 @@ function main(): void {
 
     const entropyElement = document.getElementById("entropy");
     const branchesElement = document.getElementById("branches");
-    const entropyFormatElement = document.getElementById("entropy-format");
+    const entropyFormatElement = document.getElementById("generate-entropy-format");
     (entropyElement as any).value = entropy;
     (branchesElement as any).value = branches.join("\n");
-    (entropyFormatElement as any).value = entropyFormat;
+    if(entropyFormat){
+        (entropyFormatElement as any).value = entropyFormat;
+    }
     if (branches.length === 0 || branches[0] === "") {
         console.log("No branches");
         return;

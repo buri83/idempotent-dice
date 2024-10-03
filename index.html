@@ -34,7 +34,7 @@
 
                     Entropy - 乱数の素:<br />
                     <input name="e" type="text" id="entropy" style="height: 40px; width: 800px; margin-top: 10px; font-size: 16px; padding: 10px;">
-                    <select id="f" style="height: 20px; width: 200px; font-size: 14px;" >
+                    <select name="f" id="generate-entropy-format" style="height: 20px; width: 200px; font-size: 14px;" >
                         <option value="days">YYYY-MM-DD</option>
                         <option value="hours">YYYY-MM-DD HH:??</option>
                         <option value="minutes">YYYY-MM-DD HH:MM</option>
@@ -73,7 +73,7 @@
             }
 
             function insertTodayToEntropy(){
-                const format = document.getElementById("f").value;
+                const format = document.getElementById("generate-entropy-format").value;
                 const now = new Date();
                 let entropy = "";
                 switch(format){
