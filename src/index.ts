@@ -59,11 +59,14 @@ function main(): void {
     const searchParams = new URLSearchParams(query);
     const entropy = searchParams.get("e")?.trim() ?? "";
     const branches = searchParams.get("b")?.replaceAll("\r", "").trim().split("\n") || [];
+    const entropyFormat = searchParams.get("f");
 
     const entropyElement = document.getElementById("entropy");
     const branchesElement = document.getElementById("branches");
+    const entropyFormatElement = document.getElementById("entropy-format");
     (entropyElement as any).value = entropy;
     (branchesElement as any).value = branches.join("\n");
+    (entropyFormatElement as any).value = entropyFormat;
     if (branches.length === 0 || branches[0] === "") {
         console.log("No branches");
         return;

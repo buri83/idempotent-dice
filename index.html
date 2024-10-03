@@ -33,7 +33,13 @@
                     <br />
 
                     Entropy - 乱数の素:<br />
-                    <input name="e" type="text" id="entropy" style="height: 40px; width: 800px; margin-top: 10px; font-size: 16px; padding: 10px;"><br />
+                    <input name="e" type="text" id="entropy" style="height: 40px; width: 800px; margin-top: 10px; font-size: 16px; padding: 10px;">
+                    <select id="f" style="height: 20px; width: 200px; font-size: 14px;" >
+                        <option value="days">YYYY-MM-DD</option>
+                        <option value="hours">YYYY-MM-DD HH:??</option>
+                        <option value="minutes">YYYY-MM-DD HH:MM</option>
+                    </select>
+                    <button style="height: 20px; width: 120px; font-size: 14px;" onclick="insertTodayToEntropy(); return false;">set entropy</button><br />
 
                     <input type="submit" style="height: 50px; width: 140px; font-size: 20px; margin: 40px 0;" value="Roll Dice">
                 </form>
@@ -64,6 +70,25 @@
         <script>
             function initialize() {
                 window.location.href = '/';
+            }
+
+            function insertTodayToEntropy(){
+                const format = document.getElementById("f").value;
+                const now = new Date();
+                let entropy = "";
+                switch(format){
+                    case "days":
+                        entropy =  `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
+                        break;
+                    case "hours":
+                        entropy =  `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()} ${now.getHours()}:??`;
+                        break;
+                    case "minutes":
+                        entropy =  `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()} ${now.getHours()}:${now.getMinutes()}`;
+                        break;
+                }
+
+                document.getElementById("entropy").value = entropy;
             }
         </script>
     </body>
